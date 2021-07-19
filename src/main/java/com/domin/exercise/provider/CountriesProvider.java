@@ -63,7 +63,7 @@ public class CountriesProvider implements Provider<Country> {
         }
 
         public Builder sortOrder(Order order) {
-            Validate.notNull(sortBy, "Please set an element to sort by.");
+            Validate.notNull(sortBy, "Please set a sort by.");
             this.sortOrder = order;
             return this;
         }
@@ -75,7 +75,7 @@ public class CountriesProvider implements Provider<Country> {
         }
 
         public CountriesProvider build() throws ProviderException {
-            Validate.notNull(jsonArray, "Response is missing.");
+            Validate.notNull(jsonArray, "JSON is missing.");
 
             ObjectMapper mapper = new ObjectMapper();
             List<Country> countries;
@@ -90,15 +90,13 @@ public class CountriesProvider implements Provider<Country> {
             if (sortBy != null) {
                 countries.sort(sortBy);
 
-                if (sortOrder != null) {
-                    switch (sortOrder) {
-                        case DESCENDING:
-                            Collections.reverse(countries);
-                        case ASCENDING:
-                            // do nothing as countries.sort(sortBy) is ascending.
-                        default:
-                            // do nothing
-                    }
+                switch (sortOrder) {
+                    case DESCENDING:
+                        Collections.reverse(countries);
+                    case ASCENDING:
+                        // do nothing as countries.sort(sortBy) is ascending.
+                    default:
+                        // do nothing
                 }
             }
 
