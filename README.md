@@ -1,6 +1,6 @@
 # Project Title
 
-Domin technical exercise.
+Domin Technical Exercise.
 
 ## Description
 
