@@ -39,7 +39,7 @@ class CountriesExtractorTest {
     void filterByReturnsObjectsMatchingTheFilterCondition() throws ExtractorException {
         Predicate doesNotContain = (Predicate<List>) list -> !new Contains("IRN").test(list);
         Set<Country> actual = extractor.filterBy("borders", doesNotContain, countries);
-        assertThat(actual.size()).isEqualTo(1);
+        assertThat(actual.size()).isEqualTo(3);
     }
 
     @Test
@@ -52,7 +52,7 @@ class CountriesExtractorTest {
     @Test
     void extractAllReturnsValuesForProvidedProperty() throws ExtractorException {
         Set<String> values = extractor.extractAll("name", countries);
-        assertThat(values.size()).isEqualTo(2);
+        assertThat(values.size()).isEqualTo(4);
     }
 
     @Test
@@ -65,7 +65,7 @@ class CountriesExtractorTest {
     @Test
     void extractAllSizesReturnsValuesForProvidedProperty() throws ExtractorException {
         List<Integer> actual = extractor.extractAllSizes("borders", countries);
-        assertThat(actual.size()).isEqualTo(2);
+        assertThat(actual.size()).isEqualTo(4);
         assertThat(actual.get(0)).isEqualTo(6);
         assertThat(actual.get(1)).isEqualTo(0);
     }

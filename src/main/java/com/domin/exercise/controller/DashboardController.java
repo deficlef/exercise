@@ -38,6 +38,7 @@ public class DashboardController {
 
     @GetMapping("/")
     public String load(Model model) {
+        
         try {
             try (CloseableHttpClient client = HttpClients.createDefault()) {
                 HttpGet request = new HttpGet(API_URL);
