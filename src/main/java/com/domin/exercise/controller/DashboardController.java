@@ -1,6 +1,6 @@
 package com.domin.exercise.controller;
 
-import com.domin.exercise.comparator.BordersSizeComparator;
+import com.domin.exercise.comparator.country.BordersSizeComparator;
 import com.domin.exercise.extractor.CountriesDataExtractor;
 import com.domin.exercise.extractor.filter.Contains;
 import com.domin.exercise.extractor.ExtractorException;

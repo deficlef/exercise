@@ -28,7 +28,7 @@ public class Country {
     private Translations translations;
     private String flag;
     private List<RegionalBloc> regionalBlocs = new ArrayList<>();
-    ;
+
     private String cioc;
 
     public String getName() {

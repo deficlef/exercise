@@ -1,10 +1,11 @@
-package com.domin.exercise.comparator;
+package com.domin.exercise.comparator.country;
 
 import com.domin.exercise.model.response.Country;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
@@ -20,7 +21,7 @@ class BordersSizeComparatorTest {
     @Test
     public void shouldReturnNegativeIntOnValueGreaterThan() {
         Country country1 = new Country();
-        country1.setBorders(Arrays.asList("Hello"));
+        country1.setBorders(Collections.singletonList("Hello"));
         Country country2 = new Country();
         country2.setBorders(Arrays.asList("Hello", "World!"));
 
@@ -32,7 +33,7 @@ class BordersSizeComparatorTest {
         Country country1 = new Country();
         country1.setBorders(Arrays.asList("Hello", "World!"));
         Country country2 = new Country();
-        country2.setBorders(Arrays.asList("Hello"));
+        country2.setBorders(Collections.singletonList("Hello"));
 
         assertThat(comparator.compare(country1, country2)).isEqualTo(1);
     }

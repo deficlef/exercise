@@ -30,7 +30,7 @@ public class CountriesProvider implements Provider<Country> {
 
     public enum Order {
         ASCENDING,
-        DESCENDING;
+        DESCENDING
     }
 
     public static class Builder {

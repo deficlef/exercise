@@ -30,9 +30,7 @@ class CountriesDataExtractorTest {
 
     @Test
     void filterByForbidsUnsupportedOperations() {
-        Assertions.assertThrows(ExtractorException.class, () -> {
-            extractor.filterBy("invalidProp", new Contains("value"), countries);
-        });
+        Assertions.assertThrows(ExtractorException.class, () -> extractor.filterBy("invalidProp", new Contains("value"), countries));
     }
 
     @Test
@@ -44,9 +42,7 @@ class CountriesDataExtractorTest {
 
     @Test
     void extractAllForbidsUnsupportedOperations() {
-        Assertions.assertThrows(ExtractorException.class, () -> {
-            extractor.extractAll("invalidProp", countries);
-        });
+        Assertions.assertThrows(ExtractorException.class, () -> extractor.extractAll("invalidProp", countries));
     }
 
     @Test
@@ -57,9 +53,7 @@ class CountriesDataExtractorTest {
 
     @Test
     void extractAllSizesForbidsUnsupportedOperations() {
-        Assertions.assertThrows(ExtractorException.class, () -> {
-            extractor.extractAllSizes("invalidProp", countries);
-        });
+        Assertions.assertThrows(ExtractorException.class, () -> extractor.extractAllSizes("invalidProp", countries));
     }
 
     @Test

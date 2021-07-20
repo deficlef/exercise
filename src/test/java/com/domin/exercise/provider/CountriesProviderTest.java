@@ -1,6 +1,6 @@
 package com.domin.exercise.provider;
 
-import com.domin.exercise.comparator.BordersSizeComparator;
+import com.domin.exercise.comparator.country.BordersSizeComparator;
 import com.domin.exercise.model.response.Country;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -45,38 +45,30 @@ class CountriesProviderTest {
 
     @Test
     void shouldRejectWhenNoResponseProvided() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            new CountriesProvider.Builder().build();
-        });
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new CountriesProvider.Builder().build());
     }
 
     @Test
     void shouldRejectWhenInvalidJsonIsProvided() {
-        Assertions.assertThrows(ProviderException.class, () -> {
-            new CountriesProvider.Builder()
-                    .jsonArray("invalid json")
-                    .build();
-        });
+        Assertions.assertThrows(ProviderException.class, () -> new CountriesProvider.Builder()
+                .jsonArray("invalid json")
+                .build());
     }
 
     @Test
     void shouldRejectWhenSortOrderIsSelectedWithoutProvidingASortBy() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            new CountriesProvider.Builder()
-                    .sortOrder(CountriesProvider.Order.ASCENDING)
-                    .build();
-        });
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new CountriesProvider.Builder()
+                .sortOrder(CountriesProvider.Order.ASCENDING)
+                .build());
     }
 
     @Test
     void shouldRejectWhenSizeIsNotGreaterThanZero() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            new CountriesProvider.Builder()
-                    .sortBy(new BordersSizeComparator())
-                    .sortOrder(CountriesProvider.Order.ASCENDING)
-                    .withSize(-1)
-                    .build();
-        });
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new CountriesProvider.Builder()
+                .sortBy(new BordersSizeComparator())
+                .sortOrder(CountriesProvider.Order.ASCENDING)
+                .withSize(-1)
+                .build());
     }
 
     @Test

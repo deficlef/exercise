@@ -1,4 +1,4 @@
-package com.domin.exercise.comparator;
+package com.domin.exercise.comparator.country;
 
 import com.domin.exercise.model.response.Country;
 
