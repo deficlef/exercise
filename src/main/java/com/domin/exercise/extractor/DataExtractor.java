@@ -9,7 +9,7 @@ import java.util.function.Predicate;
  *
  * @param <T> the list item class type.
  */
-public interface Extractor<T> {
+public interface DataExtractor<T> {
 
     /**
      * Returns a filtered set of objects from the objects list. This is done by applying a filter condition to the values

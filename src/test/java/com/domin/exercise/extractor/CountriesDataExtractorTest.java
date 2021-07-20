@@ -14,14 +14,14 @@ import java.util.function.Predicate;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
-class CountriesExtractorTest {
+class CountriesDataExtractorTest {
 
-    private CountriesExtractor extractor;
+    private CountriesDataExtractor extractor;
     private List<Country> countries;
 
     @BeforeEach
     void setUp() throws Exception {
-        extractor = new CountriesExtractor();
+        extractor = new CountriesDataExtractor();
         ObjectMapper mapper = new ObjectMapper();
         countries = mapper.readValue(Thread.currentThread().getContextClassLoader().getResourceAsStream("countries.json"),
                 new TypeReference<List<Country>>() {

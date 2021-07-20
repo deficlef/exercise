@@ -1,7 +1,7 @@
 package com.domin.exercise.controller;
 
 import com.domin.exercise.comparator.BordersSizeComparator;
-import com.domin.exercise.extractor.CountriesExtractor;
+import com.domin.exercise.extractor.CountriesDataExtractor;
 import com.domin.exercise.extractor.filter.Contains;
 import com.domin.exercise.extractor.ExtractorException;
 import com.domin.exercise.model.Dashboard;
@@ -38,7 +38,7 @@ public class DashboardController {
 
     @GetMapping("/")
     public String load(Model model) {
-        
+
         try {
             try (CloseableHttpClient client = HttpClients.createDefault()) {
                 HttpGet request = new HttpGet(API_URL);
@@ -54,7 +54,7 @@ public class DashboardController {
                         .withSize(MAX_SIZE)
                         .build();
 
-                CountriesExtractor extractor = new CountriesExtractor();
+                CountriesDataExtractor extractor = new CountriesDataExtractor();
                 List<Country> topCountriesList = topCountriesProvider.elements();
                 Set<String> names = extractor.extractAll(PROPERTY_NAME, topCountriesList);
                 List<Integer> borderCounts = extractor.extractAllSizes(PROPERTY_BORDERS, topCountriesList);

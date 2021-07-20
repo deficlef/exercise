@@ -12,9 +12,9 @@ import java.util.function.Predicate;
 import static java.util.stream.Collectors.toSet;
 
 /**
- * {@link Extractor} for accumulating values from a list of {@link Country}s.
+ * {@link DataExtractor} for accumulating values from a list of {@link Country}s.
  */
-public class CountriesExtractor implements Extractor<Country> {
+public class CountriesDataExtractor implements DataExtractor<Country> {
 
     @Override
     public Set<Country> filterBy(String property, Predicate<List> condition, List<Country> countries) throws ExtractorException {
