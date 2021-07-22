@@ -24,8 +24,7 @@ cd <PROJECT_DIR>
 ```
 ./gradlew bootRun
 ```
-By default the application should now be running on http://localhost:8080. If this is not the case, look through the Gradle log  
-for the port where Tomcat was initialized and replace 8080.
+By default the application should now be running on http://localhost:8080. If this is not the case, look through the Gradle log for the port where Tomcat was initialized and replace 8080.
 ## Authors
 
 Kevin Umebolu  
